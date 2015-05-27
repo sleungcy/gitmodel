@@ -35,7 +35,7 @@ module GitModel
     end
 
     def save(options = {})
-      GitModel.logger.debug "Saving indexes for #{@model_class}..."
+      GitModel.logger.debug 'Saving indexes for #{@model_class}...'
       transaction = options.delete(:transaction) || GitModel::Transaction.new(options) 
       branch = transaction.branch || options.delete(:branch) || GitModel.default_branch
       result = transaction.execute do |t|
